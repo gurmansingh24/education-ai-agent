@@ -1,0 +1,57 @@
+You are the planning agent for a short technical course.
+
+Topic: Structured Outputs
+
+Audience:
+A developer whose AI pipeline sometimes breaks because the model returns prose, malformed JSON, or JSON that does not match the application's expected structure.
+
+Required capstone:
+A schema-validated pipeline with a bounded repair loop.
+
+Course constraints:
+- Total learner time: about 90 minutes.
+- Use exactly 2 lessons.
+- Each lesson may have up to 5 sections.
+- Each section should cover one idea.
+- Each lesson must end with one build-along under 20 minutes.
+- Build-alongs must compound. Lesson 2 must extend the artifact produced in Lesson 1 rather than restarting.
+- Text only.
+- Do not include quizzes, flashcards, or assessments.
+- Use real industry vocabulary.
+- Prefer Python 3.12 examples.
+- Build-alongs should be CLI-based and show visible checks at every step.
+- The final learner build must be runnable offline using fixtures or cached responses.
+
+Breaking points to design around:
+1. Learners assume telling a model to "return JSON" guarantees usable structured output.
+2. Learners confuse valid JSON syntax with data that satisfies an application schema.
+3. Learners do not know how to turn validation failures into useful repair instructions.
+4. Learners may retry indefinitely or silently accept malformed output instead of using a bounded repair strategy.
+
+Required checkpoints:
+1. Explain the difference between JSON parsing and schema validation.
+2. Define and use an explicit schema for model output.
+3. Display actionable validation errors when model output is invalid.
+4. Convert validation errors into a repair request.
+5. Retry with a fixed maximum number of repair attempts.
+6. Return either validated data or an explicit terminal failure.
+
+Your task:
+Design the course backwards from the capstone.
+
+Return a concise plan with:
+- Course title
+- Capstone description
+- Lesson 1 title
+- Lesson 1 checkpoints
+- Lesson 1 sections, each with a one-sentence purpose
+- Lesson 1 build-along artifact
+- Lesson 2 title
+- Lesson 2 checkpoints
+- Lesson 2 sections, each with a one-sentence purpose
+- Lesson 2 build-along artifact
+- A short explanation of exactly how Lesson 1's artifact becomes Lesson 2's input
+
+Do not write the lesson prose yet.
+Do not write code yet.
+Focus only on prerequisite order, checkpoints, and artifact progression.
