@@ -1,56 +1,61 @@
 # Education AI Agent
 
-**AI-Powered Course Generation and Structured Output Validation**
+### AI-Powered Educational Course Generator
 
-A Python-based AI agent designed to generate educational course content and interactive coding exercises using the OpenAI API. The project demonstrates automated content generation, structured output validation, and error handling.
+A Python-based AI agent that uses the OpenAI API to generate structured educational content, programming lessons, and interactive coding exercises.
+
+Developed as an AI engineering take-home project for EducationPals.
 
 ## Project Overview
 
-This project explores how AI can be used to automate the development of educational materials.
+The Education AI Agent automates the creation of educational courses through a multi-stage AI workflow.
 
-The agent uses a multi-stage workflow to plan course content, generate lessons and coding exercises, and review the generated material.
+The project includes separate prompts for course planning, lesson writing, coding exercise generation, and content review.
 
-The included course focuses on structured outputs and teaches developers how to build reliable AI pipelines.
+The included example is a two-lesson course on building reliable structured-output pipelines.
 
 ## Technologies Used
 
-- **Python 3.12** — Core programming language
-- **OpenAI API** — AI-powered content generation
-- **Pydantic 2.x** — Schema validation
-- **JSON** — Structured data representation
-- **Git and GitHub** — Version control
+- Python 3.12
+- OpenAI API
+- Pydantic 2.x
+- JSON
+- Git and GitHub
 
 ## Key Features
 
-### 1. AI-Powered Course Generation
+**AI-Powered Course Generation**
+- Generates educational course plans and lesson content.
+- Uses specialized prompts for different content-generation stages.
+- Supports the creation of coding exercises.
 
-Uses AI to generate educational content through specialized stages:
+**Structured Output Validation**
+- Demonstrates JSON parsing and schema validation.
+- Distinguishes malformed JSON from schema-invalid data.
+- Provides useful validation diagnostics.
 
-- Course planning
-- Lesson generation
-- Coding exercise generation
-- Content review
+**Bounded Repair Pipeline**
+- Uses validation errors to guide repair attempts.
+- Revalidates repaired responses.
+- Stops after a fixed number of attempts.
 
-### 2. Structured Output Validation
+**Offline Coding Exercises**
+- Includes cached model responses for testing.
+- Allows learners to complete exercises without an API key.
 
-Demonstrates techniques for validating AI-generated data against predefined schemas.
+## Example Generated Course
 
-- Detects malformed JSON
-- Identifies schema-validation errors
-- Produces useful validation diagnostics
+**Structured Outputs — A Two-Lesson Developer Course**
 
-### 3. Bounded Repair Loop
+The example course teaches developers to build reliable AI pipelines.
 
-The generated learning exercises demonstrate how to handle invalid model responses.
+**Lesson 1: Parse It, Then Prove It Matches the Contract**
 
-- Detect invalid outputs
-- Apply constrained repair attempts
-- Revalidate repaired responses
-- Stop after a fixed retry budget
+Learners build a CLI validator that detects malformed JSON and schema-validation errors.
 
-### 4. Offline Learning Exercises
+**Lesson 2: Repair, Revalidate, and Stop**
 
-Generated exercises use cached model responses so learners can complete them without an active API connection.
+Learners extend the validator into a bounded repair pipeline that checks repaired outputs and enforces a retry limit.
 
 ## Project Structure
 
@@ -73,37 +78,42 @@ education-ai-agent/
 
 ## Installation
 
-**1. Clone the repository**
+Clone the repository:
 
 ```bash
 git clone https://github.com/gurmansingh24/education-ai-agent.git
 cd education-ai-agent
 ```
 
-**2. Create a virtual environment**
+Create a virtual environment:
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 ```
 
-**3. Install dependencies**
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Learning Outcomes
+## Running the Project
 
-This project demonstrates experience with:
+The repository contains an AI course generator in `agent/generate.py` and offline learning exercises in the `build/` directory.
 
-- Python software development
-- AI-assisted content generation
+The exact execution commands for these components should be checked against their implementations before running them.
+
+## Skills Demonstrated
+
+- Python development
+- AI application development
 - Prompt engineering
-- JSON schema validation
-- Error handling and debugging
-- Automated validation workflows
+- API integration
+- Structured data validation
+- Error handling
+- Automated content generation
 
 ## Author
 
-Developed as an AI engineering take-home project for EducationPals.
+Developed as part of the EducationPals AI Engineering take-home assignment.
