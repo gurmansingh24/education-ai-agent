@@ -1,54 +1,109 @@
-# Structured Outputs
+# Education AI Agent
 
-A ~90-minute, two-lesson course for developers whose AI pipelines break when a model returns prose or malformed data instead of the expected JSON.
+**AI-Powered Course Generation and Structured Output Validation**
 
-## Capstone
+A Python-based AI agent designed to generate educational course content and interactive coding exercises using the OpenAI API. The project demonstrates automated content generation, structured output validation, and error handling.
 
-The learner finishes with a schema-validated structured-output pipeline with a bounded repair loop. The final CLI distinguishes malformed JSON from schema-invalid JSON, reports useful validation errors, repairs invalid responses using cached model outputs, revalidates every repair, and stops after a fixed repair budget.
+## Project Overview
 
-## Breaking Points
+This project explores how AI can be used to automate the development of educational materials.
 
-1. Treating valid JSON as equivalent to valid application data.
-2. Losing the distinction between JSON parsing failures and schema-validation failures.
-3. Trusting a model's repaired response without validating it again.
-4. Building a repair loop without a bounded retry policy.
+The agent uses a multi-stage workflow to plan course content, generate lessons and coding exercises, and review the generated material.
 
-## Checkpoints
+The included course focuses on structured outputs and teaches developers how to build reliable AI pipelines.
 
-### Lesson 1 — Parse It, Then Prove It Matches the Contract
+## Technologies Used
 
-By the end of Lesson 1, the learner can:
+- **Python 3.12** — Core programming language
+- **OpenAI API** — AI-powered content generation
+- **Pydantic 2.x** — Schema validation
+- **JSON** — Structured data representation
+- **Git and GitHub** — Version control
 
-- Define a strict application schema.
-- Parse cached model responses.
-- Distinguish JSON syntax errors from schema-validation errors.
-- Print actionable validation diagnostics.
+## Key Features
 
-Build artifact: an offline CLI validator.
+### 1. AI-Powered Course Generation
 
-### Lesson 2 — Repair, Revalidate, and Stop
+Uses AI to generate educational content through specialized stages:
 
-By the end of Lesson 2, the learner can:
+- Course planning
+- Lesson generation
+- Coding exercise generation
+- Content review
 
-- Turn validation errors into a constrained repair request.
-- Feed cached repair responses through the same validator.
-- Revalidate every attempted repair.
-- Stop after a bounded number of repair attempts.
+### 2. Structured Output Validation
 
-Build artifact: Lesson 1's validator extended into a bounded repair pipeline.
+Demonstrates techniques for validating AI-generated data against predefined schemas.
 
-## Requirements
+- Detects malformed JSON
+- Identifies schema-validation errors
+- Produces useful validation diagnostics
 
-- Python 3.12
-- Pydantic 2.x
-- No API key is required to run the learner build-alongs.
-- Build-alongs replay cached fixture/model responses and run offline.
+### 3. Bounded Repair Loop
 
-## Setup
+The generated learning exercises demonstrate how to handle invalid model responses.
 
-From the project root:
+- Detect invalid outputs
+- Apply constrained repair attempts
+- Revalidate repaired responses
+- Stop after a fixed retry budget
+
+### 4. Offline Learning Exercises
+
+Generated exercises use cached model responses so learners can complete them without an active API connection.
+
+## Project Structure
+
+```text
+education-ai-agent/
+├── agent/
+│   ├── config.py
+│   ├── generate.py
+│   └── prompts/
+├── build/
+│   ├── lesson-1/
+│   └── lesson-2/
+├── course/
+│   ├── lesson-1.md
+│   └── lesson-2.md
+├── requirements.txt
+├── README.md
+└── writeup.md
+```
+
+## Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/gurmansingh24/education-ai-agent.git
+cd education-ai-agent
+```
+
+**2. Create a virtual environment**
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
+```
+
+**3. Install dependencies**
+
+```bash
 python -m pip install -r requirements.txt
+```
+
+## Learning Outcomes
+
+This project demonstrates experience with:
+
+- Python software development
+- AI-assisted content generation
+- Prompt engineering
+- JSON schema validation
+- Error handling and debugging
+- Automated validation workflows
+
+## Author
+
+Developed as an AI engineering take-home project for EducationPals.
