@@ -117,3 +117,37 @@ The exact execution commands for these components should be checked against thei
 ## Author
 
 Developed as part of the EducationPals AI Engineering take-home assignment.
+
+## Running the AI Agent
+
+The AI agent uses the OpenAI API to generate educational courses through a four-stage pipeline.
+
+**1. Set your OpenAI API key**
+
+On macOS or Linux:
+
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+Never commit your real API key to GitHub.
+
+**2. Run the course generator**
+
+From the project root:
+
+```bash
+python agent/generate.py
+```
+
+**3. Generated files**
+
+After successful execution, the agent creates:
+
+- `output/course-plan.md` — Generated course plan
+- `course/generated-course.md` — Generated lesson content
+- `output/generated-build.md` — Generated coding exercises
+- `build/lesson-2/` — Extracted coding files
+- `output/review.md` — AI-generated review
+
+**Note:** Running the generator requires an OpenAI API key and may incur API usage charges. The included offline coding exercises do not require an API key.
